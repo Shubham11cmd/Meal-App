@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="charset" content="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Meal App</title>
+        <!-- link to font-awesome -->
+        <script src="https://kit.fontawesome.com/14097a442a.js" crossorigin="anonymous"></script>
+        <!-- link to bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+        <!-- link to css -->
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="container">
+
+            <!-- navbar container -->
+            <div class="nav">
+                <nav class="navbar bg-body-tertiary fixed-top" style="background-color: brown;">
+                    <div class="container-fluid">
+                      <a class="navbar-brand" href="#">Meal App</a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" style="color: white; background-color: rgb(188, 75, 75);" onclick="displayFavouriteMealList()">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                          <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="color: brown;">Favourite</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <!--this div is for show favourite meals -->
+                        <div id="favourites-meals" class="offcanvas-body d-flex justify-content-center flex-wrap">
+                            <div class="spinner-border text-success" role="status">
+                                <span class="sr-only">Loading...</span>
+                              </div>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- heading container -->
+            <div id="header" class="container text-center">
+                <h1>Find your meals here</h1>
+            </div>
+
+            <!-- input-container -->
+            <div id="search-bar" class="container text-center mt-5" onkeyup="displayMealList()">
+                <input type="search" id="search" class="form-control" placeholder="search your meal..." />
+            </div>
+
+            <!-- single-card-container -->
+            <div id="single-card-container" class="container d-flex justify-content-center flex-wrap mt-5"></div>
+
+            <!-- card-container -->
+            <div id="card-container" class="container d-flex justify-content-center flex-wrap mt-2"></div>
+        </div>
+          <!-- link to bootstrap js -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
